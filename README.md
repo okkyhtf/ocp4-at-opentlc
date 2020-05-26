@@ -27,6 +27,7 @@ export GUID={GUID generated from opentlc}
 ### Step 4: Login as Root and run preparation script
 ```bash
 > sudo -i
+> cd ${HOME}/ocp4-at-opentlc/
 > ./prepare-openshift-installer.sh
 ```
 ### Step 5: Relogin as Root and install ocp
