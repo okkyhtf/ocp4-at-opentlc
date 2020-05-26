@@ -32,14 +32,15 @@ export GUID={GUID generated from opentlc}
 ```
 ### Step 5: Relogin as Root and install ocp
 ```bash
-> sudo -i
 > exit
+> sudo -i
 > tmux
 > time openshift-install create cluster --dir $HOME/cluster-${GUID} --log-level debug
 ```
 
 ### From installer screen, choose
 ```
+CA certificate = --> use default
 Cluster Name = erfin-cluster
 AWS Region = ap-southeast-1
 Top level domain = sandbox930.opentlc.com
