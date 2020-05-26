@@ -60,3 +60,9 @@ INFO Login to the console with user: kubeadmin, password: x5Uk4-KXUwq-BkA6S-LALE
 ```bash
 > oc login --token=$TOKEN --server=https://api.erfin-cluster.sandbox930.opentlc.com:6443
 ```
+
+### Step 7: Upload non admin user on htpasswd
+```bash
+> htpasswd -nb erfin mypassword
+```
+Copy output on .txt file and upload on OpenShift web console (user management) 
