@@ -62,9 +62,25 @@ Pull Secret = ***** download from try.openshift.com
 Below is end of installation screen
 ```
 ...
+INFO Waiting up to 30m0s for the cluster at https://api.edwin-cluster.sandbox????.opentlc.com:6443 to initialize...
+...
+DEBUG Still waiting for the cluster to initialize: Working towards 4.4.4: 99% complete, waiting on authentication, console, ingress, monitoring
+DEBUG Still waiting for the cluster to initialize: Working towards 4.4.4: 99% complete
+DEBUG Still waiting for the cluster to initialize: Working towards 4.4.4: 100% complete, waiting on authentication
+DEBUG Cluster is initialized
+INFO Waiting up to 10m0s for the openshift-console route to be created...
+DEBUG Route found in openshift-console namespace: console
+DEBUG Route found in openshift-console namespace: downloads
+DEBUG OpenShift console route is created
+INFO Install complete!
+INFO To access the cluster as the system:admin user when using 'oc', run 'export KUBECONFIG=/root/cluster-cfbf/auth/kubeconfig'
 
 INFO Access the OpenShift web-console here: https://console-openshift-console.apps.edwin-cluster.sandbox???.opentlc.com --> generated
 INFO Login to the console with user: kubeadmin, password: ??? --> generated
+
+real    42m54.337s --> time needed for installation
+user    0m33.311s
+sys     0m2.008s
 ```
 
 ### Step 6: Login from oc client
