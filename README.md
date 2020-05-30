@@ -29,6 +29,15 @@ export GUID={GUID generated from opentlc}
 > sudo -i
 > ./prepare-openshift-installer.sh
 ```
+
+It will shows this log once done,
+```
++ oc completion bash
++ echo 'Please exit the session and relogin again to enable the Bash completion.'
+Please exit the session and relogin again to enable the Bash completion.
+
+```
+
 ### Step 5: Relogin as Root and install ocp
 ```bash
 > sudo -i
