@@ -49,11 +49,11 @@ Below is end of installation screen
 ```
 ...
 
-INFO Access the OpenShift web-console here: https://console-openshift-console.apps.erfin-cluster.sandbox930.opentlc.com --> generated
+INFO Access the OpenShift web-console here: https://console-openshift-console.apps.edwin-cluster.sandbox930.opentlc.com --> generated
 INFO Login to the console with user: kubeadmin, password: x5Uk4-KXUwq-BkA6S-LALEf --> generated
 ```
 
 ### Step 6: Login from oc client
 ```bash
-> oc login --token=$TOKEN --server=https://api.erfin-cluster.sandbox930.opentlc.com:6443
+> oc login --token=$TOKEN --server=https://api.edwin-cluster.sandbox930.opentlc.com:6443
 ```
