@@ -48,18 +48,23 @@ Please exit the session and relogin again to enable the Bash completion.
 
 ### From installer screen, choose
 ```
+SSH Public Key /root/.ssh/cluster-${GUID}-key.pub
+Platform aws
 AWS Region = ap-southeast-1
-Top level domain = sandbox930.opentlc.com
+Base Domain = sandbox???.opentlc.com
+Cluster Name edwin-cluster
 Pull Secret = ***** download from try.openshift.com
 ```
 > During installation, script will ask for pull secret. Download at try.openshift.com .
+
+![Pull Secret](pull-secret.PNG)
 
 Below is end of installation screen
 ```
 ...
 
-INFO Access the OpenShift web-console here: https://console-openshift-console.apps.edwin-cluster.sandbox930.opentlc.com --> generated
-INFO Login to the console with user: kubeadmin, password: x5Uk4-KXUwq-BkA6S-LALEf --> generated
+INFO Access the OpenShift web-console here: https://console-openshift-console.apps.edwin-cluster.sandbox???.opentlc.com --> generated
+INFO Login to the console with user: kubeadmin, password: ??? --> generated
 ```
 
 ### Step 6: Login from oc client
