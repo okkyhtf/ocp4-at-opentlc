@@ -39,6 +39,7 @@ export GUID={GUID generated from opentlc}
 
 ### From installer screen, choose
 ```
+Cluster name = erfin-cluster
 AWS Region = ap-southeast-1
 Top level domain = sandbox930.opentlc.com
 Pull Secret = ***** download from try.openshift.com
