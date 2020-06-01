@@ -11,7 +11,7 @@ OpenShift 4 AWS Installation IPI at OpenTLC
 ```
 ### Step 2: Clone Preparation script from Git and Change below parameter
 ```bash
-> git clone https://github.com/okkyhtf/ocp4-at-opentlc.git
+> git clone https://github.com/erfinfeluzy/ocp4-at-opentlc.git
 > cd ocp4-at-opentlc/
 > vim prepare-openshift-installer.sh
 ```
