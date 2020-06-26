@@ -52,7 +52,7 @@ SSH Public Key /root/.ssh/cluster-${GUID}-key.pub
 Platform aws
 AWS Region = ap-southeast-1
 Base Domain = sandbox???.opentlc.com
-Cluster Name edwin-cluster
+Cluster Name sample-cluster
 Pull Secret = ***** download from try.openshift.com
 ```
 > During installation, script will ask for pull secret. Download at try.openshift.com .
@@ -62,7 +62,7 @@ Pull Secret = ***** download from try.openshift.com
 Below is end of installation screen
 ```
 ...
-INFO Waiting up to 30m0s for the cluster at https://api.edwin-cluster.sandbox????.opentlc.com:6443 to initialize...
+INFO Waiting up to 30m0s for the cluster at https://api.sample-cluster.sandbox????.opentlc.com:6443 to initialize...
 ...
 DEBUG Still waiting for the cluster to initialize: Working towards 4.4.4: 99% complete, waiting on authentication, console, ingress, monitoring
 DEBUG Still waiting for the cluster to initialize: Working towards 4.4.4: 99% complete
@@ -75,7 +75,7 @@ DEBUG OpenShift console route is created
 INFO Install complete!
 INFO To access the cluster as the system:admin user when using 'oc', run 'export KUBECONFIG=/root/cluster-cfbf/auth/kubeconfig'
 
-INFO Access the OpenShift web-console here: https://console-openshift-console.apps.edwin-cluster.sandbox???.opentlc.com --> generated
+INFO Access the OpenShift web-console here: https://console-openshift-console.apps.sample-cluster.sandbox???.opentlc.com --> generated
 INFO Login to the console with user: kubeadmin, password: ??? --> generated
 
 real    42m54.337s --> time needed for installation
@@ -85,5 +85,5 @@ sys     0m2.008s
 
 ### Step 6: Login from oc client
 ```bash
-> oc login --token=$TOKEN --server=https://api.edwin-cluster.sandbox930.opentlc.com:6443
+> oc login --token=$TOKEN --server=https://api.sample-cluster.sandbox930.opentlc.com:6443
 ```
