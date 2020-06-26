@@ -30,6 +30,15 @@ export GUID={GUID generated from opentlc}
 > cd ${HOME}/ocp4-at-opentlc/
 > ./prepare-openshift-installer.sh
 ```
+
+It will shows this log once done,
+```
++ oc completion bash
++ echo 'Please exit the session and relogin again to enable the Bash completion.'
+Please exit the session and relogin again to enable the Bash completion.
+
+```
+
 ### Step 5: Relogin as Root and install ocp
 ```bash
 > exit
@@ -41,28 +50,48 @@ export GUID={GUID generated from opentlc}
 ### From installer screen, choose
 ```
 CA certificate = --> use default
-Cluster Name = erfin-cluster
+SSH Public Key /root/.ssh/cluster-${GUID}-key.pub
+Platform aws
 AWS Region = ap-southeast-1
-Top level domain = sandbox930.opentlc.com
+Base Domain = sandbox???.opentlc.com
+Cluster Name = sample-cluster
 Pull Secret = ***** download from try.openshift.com
 ```
 > During installation, script will ask for pull secret. Download at try.openshift.com .
 
+![Pull Secret](pull-secret.PNG)
+
 Below is end of installation screen
 ```
 ...
+INFO Waiting up to 30m0s for the cluster at https://api.sample-cluster.sandbox????.opentlc.com:6443 to initialize...
+...
+DEBUG Still waiting for the cluster to initialize: Working towards 4.4.4: 99% complete, waiting on authentication, console, ingress, monitoring
+DEBUG Still waiting for the cluster to initialize: Working towards 4.4.4: 99% complete
+DEBUG Still waiting for the cluster to initialize: Working towards 4.4.4: 100% complete, waiting on authentication
+DEBUG Cluster is initialized
+INFO Waiting up to 10m0s for the openshift-console route to be created...
+DEBUG Route found in openshift-console namespace: console
+DEBUG Route found in openshift-console namespace: downloads
+DEBUG OpenShift console route is created
+INFO Install complete!
+INFO To access the cluster as the system:admin user when using 'oc', run 'export KUBECONFIG=/root/cluster-cfbf/auth/kubeconfig'
 
-INFO Access the OpenShift web-console here: https://console-openshift-console.apps.erfin-cluster.sandbox930.opentlc.com --> generated
-INFO Login to the console with user: kubeadmin, password: x5Uk4-KXUwq-BkA6S-LALEf --> generated
+INFO Access the OpenShift web-console here: https://console-openshift-console.apps.sample-cluster.sandbox???.opentlc.com --> generated
+INFO Login to the console with user: kubeadmin, password: ??? --> generated
+
+real    42m54.337s --> time needed for installation
+user    0m33.311s
+sys     0m2.008s
 ```
 
 ### Step 6: Login from oc client
 ```bash
-> oc login --token=$TOKEN --server=https://api.erfin-cluster.sandbox930.opentlc.com:6443
+> oc login --token=$TOKEN --server=https://api.sample-cluster.sandbox930.opentlc.com:6443
 ```
 
 ### Step 7: Upload non admin user on htpasswd
 ```bash
-> htpasswd -nb erfin mypassword
+> htpasswd -nb admin mypassword
 ```
 Copy output on .txt file and upload on OpenShift web console (user management) 
