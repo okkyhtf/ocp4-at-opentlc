@@ -94,4 +94,9 @@ sys     0m2.008s
 ```bash
 > htpasswd -nb admin mypassword
 ```
-Copy output on .txt file and upload on OpenShift web console (user management) 
+Copy output on .txt file and upload on OpenShift web console: user management > add idP > htpasswd > add
+
+### Step 8: Set cluster admin to ocpadmin user
+```bash
+oc adm policy add-cluster-role-to-user cluster-admin ocpadmin
+```
