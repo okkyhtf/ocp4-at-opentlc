@@ -20,7 +20,7 @@ OpenShift 4 AWS Installation IPI at OpenTLC
 export AWSKEY={AWSKEY generated from opentlc}
 export AWSSECRETKEY={AWSSECRETKEY generated from opentlc}
 export REGION=ap-southeast-1
-export OCP_VERSION=4.4.4
+export OCP_VERSION=4.5.6
 export GUID={GUID generated from opentlc}
 ```
 
@@ -43,7 +43,7 @@ Please exit the session and relogin again to enable the Bash completion.
 ```bash
 > exit
 > sudo -i
-> tmux
+> tmux new -s ocp_install
 > time openshift-install create cluster --dir $HOME/cluster-${GUID} --log-level debug
 ```
 
