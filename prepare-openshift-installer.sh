@@ -3,8 +3,8 @@
 # Make sure you setup these ENV variables
 export AWSKEY=
 export AWSSECRETKEY=
-export REGION=
-export OCP_VERSION=
+export REGION=ap-southeast-1
+export OCP_VERSION=4.5.6
 export GUID=
 
 set -xe
@@ -27,7 +27,7 @@ rm -rf ./awscli-bundle ./awscli-bundle.zip
 # Configure AWS credentials
 mkdir $HOME/.aws
 
-cat << EOF >> $HOME/.aws/credentials
+cat <<EOF >>$HOME/.aws/credentials
 [default]
 aws_access_key_id = ${AWSKEY}
 aws_secret_access_key = ${AWSSECRETKEY}
