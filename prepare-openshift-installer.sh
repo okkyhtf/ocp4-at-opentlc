@@ -4,7 +4,7 @@
 export AWSKEY=
 export AWSSECRETKEY=
 export REGION=ap-southeast-1
-export OCP_VERSION=4.5.6
+export OCP_VERSION=4.5.7
 export GUID=
 
 set -xe
