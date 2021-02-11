@@ -4,25 +4,25 @@
 export AWSKEY=
 export AWSSECRETKEY=
 export REGION=ap-southeast-1
-export OCP_VERSION=4.5.7
+export OCP_VERSION=4.6.11
 export GUID=
 
 set -xe
 
 # Download and extract the latest AWS Command Line Interface
-curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli-bundle.zip"
 
 # Extract downloaded AWS Command Line Interface archive file
 unzip ./awscli-bundle.zip
 
 # Install the AWS CLI into /bin/aws
-./awscli-bundle/install -i /usr/local/aws -b /bin/aws
+./aws/install -i /usr/local/aws-cli -b /usr/local/bin
 
 # Validate that the AWS CLI works
 aws --version
 
 # Cleanup downloaded files
-rm -rf ./awscli-bundle ./awscli-bundle.zip
+rm -rf ./aws ./awscli-bundle.zip
 
 # Configure AWS credentials
 mkdir $HOME/.aws
