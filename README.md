@@ -3,7 +3,7 @@ OpenShift 4 AWS Installation IPI at OpenTLC
 
 ### Prerequisite
 1. Login opentlc
-2. Order Catalog > Openshift 4 > Openshift 4 Installation Lab
+2. Order Catalog > OPENTLC Openshift 4 Labs > Openshift 4 Installation Lab
 
 ### Step 1: Login to bastion host (provided on Opentlc's Email)
 ```bash
@@ -47,7 +47,7 @@ Please exit the session and relogin again to enable the Bash completion.
 > time openshift-install create cluster --dir $HOME/cluster-${GUID} --log-level debug
 ```
 
-### From installer screen, choose
+#### From installer screen, choose
 ```
 CA certificate = --> use default
 SSH Public Key /root/.ssh/cluster-${GUID}-key.pub
@@ -90,8 +90,16 @@ sys     0m2.008s
 > oc login --token=$TOKEN --server=https://api.sample-cluster.sandbox930.opentlc.com:6443
 ```
 
+=======
 ### Step 7: Upload non admin user on htpasswd
 ```bash
 > htpasswd -nb admin mypassword
 ```
 Copy output on .txt file and upload on OpenShift web console (user management) 
+
+### Step 8: Etc
+In case of you forgot your OCP's Kubeadmin password, we can check our installation log files which can be found on `.openshift_install.log`, and located in `$HOME/cluster-${GUID}`. 
+
+```
+vi $HOME/cluster-${GUID}/.openshift_install.log
+```
