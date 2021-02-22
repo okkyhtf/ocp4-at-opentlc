@@ -3,7 +3,7 @@ OpenShift 4 AWS Installation IPI at OpenTLC
 
 ### Prerequisite
 1. Login opentlc
-2. Order Catalog > Openshift 4 > Openshift 4 Installation Lab
+2. Order Catalog > OPENTLC Openshift 4 Labs > Openshift 4 Installation Lab
 
 ### Step 1: Login to bastion host (provided on Opentlc's Email)
 ```bash
@@ -20,7 +20,7 @@ OpenShift 4 AWS Installation IPI at OpenTLC
 export AWSKEY={AWSKEY generated from opentlc}
 export AWSSECRETKEY={AWSSECRETKEY generated from opentlc}
 export REGION=ap-southeast-1
-export OCP_VERSION=4.5.6
+export OCP_VERSION=4.6.1
 export GUID={GUID generated from opentlc}
 ```
 
