@@ -1,11 +1,11 @@
 #!/bin/env bash
 
 # Make sure you setup these ENV variables
-export AWSKEY=
-export AWSSECRETKEY=
+export AWSKEY=CHANGETHIS
+export AWSSECRETKEY=CHANGETHIS
 export REGION=ap-southeast-1
-export OCP_VERSION=4.6.11
-export GUID=
+export OCP_VERSION=4.7.4
+export GUID=CHANGETHIS
 
 set -xe
 
@@ -16,7 +16,10 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli-bundl
 unzip ./awscli-bundle.zip
 
 # Install the AWS CLI into /bin/aws
-./aws/install -i /usr/local/aws-cli -b /usr/local/bin
+./aws/install -i /usr/local/aws-cli -b /usr/local/bin --update
+
+# Add AWS CLI to PATH
+export PATH="$PATH:/usr/local/bin"
 
 # Validate that the AWS CLI works
 aws --version
