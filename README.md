@@ -1,4 +1,4 @@
-# Install Openshift 4.5.x on AWS (Internal Red Hat)
+# Install Openshift 4.7.x on AWS (Internal Red Hat)
 OpenShift 4 AWS Installation IPI at OpenTLC 
 
 ### Prerequisite
@@ -20,14 +20,15 @@ OpenShift 4 AWS Installation IPI at OpenTLC
 export AWSKEY={AWSKEY generated from opentlc}
 export AWSSECRETKEY={AWSSECRETKEY generated from opentlc}
 export REGION=ap-southeast-1
-export OCP_VERSION=4.5.14
+export OCP_VERSION=4.7.7
 export GUID={GUID generated from opentlc}
 ```
+find your GUID on email header. eg: ILT_OCP4_INSTALLATION_LAB-{GUID}_COMPLETED
 
 ### Step 4: Login as Root and run preparation script
 ```bash
 > sudo -i
-> cd ${HOME}/ocp4-at-opentlc/
+> cd /home/${YOUR-OPENTLC-USER}/ocp4-at-opentlc/
 > ./prepare-openshift-installer.sh
 ```
 
