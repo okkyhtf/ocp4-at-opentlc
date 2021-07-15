@@ -97,6 +97,11 @@ sys     0m2.008s
 ```
 Copy output on .txt file and upload on OpenShift web console (user management) 
 
+### Optional: Set cluster admin to ocpadmin user
+```bash
+oc adm policy add-cluster-role-to-user cluster-admin ocpadmin
+```
+
 ### Step 8: Etc
 In case of you forgot your OCP's Kubeadmin password, we can check our installation log files which can be found on `.openshift_install.log`, and located in `$HOME/cluster-${GUID}`. 
 
