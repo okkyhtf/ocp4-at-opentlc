@@ -1,9 +1,9 @@
-# Install Openshift 4.7.x on AWS (Internal Red Hat)
+# Install Openshift 4.7.4 on AWS (Internal Red Hat)
 OpenShift 4 AWS Installation IPI at OpenTLC 
 
 ### Prerequisite
 1. Login opentlc
-2. Order Catalog > Openshift 4 > Openshift 4 Installation Lab
+2. Order Catalog > OPENTLC Openshift 4 Labs > Openshift 4 Installation Lab
 
 ### Step 1: Login to bastion host (provided on Opentlc's Email)
 ```bash
@@ -11,7 +11,7 @@ OpenShift 4 AWS Installation IPI at OpenTLC
 ```
 ### Step 2: Clone Preparation script from Git and Change below parameter
 ```bash
-> git clone https://github.com/erfinfeluzy/ocp4-at-opentlc.git
+> git clone https://github.com/okkyhtf/ocp4-at-opentlc.git
 > cd ocp4-at-opentlc/
 > vim prepare-openshift-installer.sh
 ```
@@ -20,15 +20,14 @@ OpenShift 4 AWS Installation IPI at OpenTLC
 export AWSKEY={AWSKEY generated from opentlc}
 export AWSSECRETKEY={AWSSECRETKEY generated from opentlc}
 export REGION=ap-southeast-1
-export OCP_VERSION=4.7.7
+export OCP_VERSION=4.7.4
 export GUID={GUID generated from opentlc}
 ```
-find your GUID on email header. eg: ILT_OCP4_INSTALLATION_LAB-{GUID}_COMPLETED
 
 ### Step 4: Login as Root and run preparation script
 ```bash
 > sudo -i
-> cd /home/${YOUR-OPENTLC-USER}/ocp4-at-opentlc/
+> cd ${HOME}/ocp4-at-opentlc/
 > ./prepare-openshift-installer.sh
 ```
 
@@ -44,11 +43,11 @@ Please exit the session and relogin again to enable the Bash completion.
 ```bash
 > exit
 > sudo -i
-> tmux
+> tmux new -s ocp_install
 > time openshift-install create cluster --dir $HOME/cluster-${GUID} --log-level debug
 ```
 
-### From installer screen, choose
+#### From installer screen, choose
 ```
 CA certificate = --> use default
 SSH Public Key /root/.ssh/cluster-${GUID}-key.pub
@@ -91,13 +90,16 @@ sys     0m2.008s
 > oc login --token=$TOKEN --server=https://api.sample-cluster.sandbox930.opentlc.com:6443
 ```
 
+=======
 ### Step 7: Upload non admin user on htpasswd
 ```bash
 > htpasswd -nb admin mypassword
 ```
-Copy output on .txt file and upload on OpenShift web console: user management > add idP > htpasswd > add
+Copy output on .txt file and upload on OpenShift web console (user management) 
 
-### Step 8: Set cluster admin to ocpadmin user
-```bash
-oc adm policy add-cluster-role-to-user cluster-admin ocpadmin
+### Step 8: Etc
+In case of you forgot your OCP's Kubeadmin password, we can check our installation log files which can be found on `.openshift_install.log`, and located in `$HOME/cluster-${GUID}`. 
+
+```
+vi $HOME/cluster-${GUID}/.openshift_install.log
 ```
